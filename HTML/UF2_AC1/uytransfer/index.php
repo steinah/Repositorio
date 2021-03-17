@@ -15,7 +15,7 @@
 				<div class="col-6 offset-3 p-3 bg-success d-flex-column rounded-top" id="div-titulo">
 					
 					
-					<h1 class="text-white text-left" id="titulo">Uy!Transfer</h1>
+					<h1 class="text-white text-left" id="titulo"></h1>
 
 				</div>
 			
