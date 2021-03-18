@@ -27,7 +27,7 @@
 
 		
 
-		//mail("ruben.martinez@mataro.epiaedu.cat", "Guapo", "Hola guerrete me mola tu tinder");
+		
 
 		?>
 	</body>

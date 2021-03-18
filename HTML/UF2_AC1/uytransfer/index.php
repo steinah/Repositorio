@@ -8,17 +8,33 @@
 		<link rel="stylesheet" href="css/estilos.css" />
 	</head>
 
-	<body>
+	<body >
 
-		<form class="forming">
+		<?php
+			
+
+			include "header.php";
+
+			
+		?>
+
+		
+		<form name="subir" action="upload.php" method="post" enctype="multipart/form-data" class="forming">
 			<div class="form-group">
 			
-			    <input type="text" class="form-control" id="exampleInputName" placeholder="Nombre">
+			    <input type="text" class="form-control" id="exampleInputName" name="nombre" placeholder="Nombre">
 			    
 			</div>
 			<div class="form-group">
-			    
-			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Selecciona un archivo">
+			    	
+					<div class="input-group mb-3">
+					  <div class="custom-file">
+					  	
+					  		<input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo">
+					   	 	<label class="custom-file-label" for="inputGroupFile01">Selecciona un archivo</label>
+						
+					  </div>
+					</div>
 			</div>
 			 
 			
@@ -39,16 +55,15 @@
 				<textarea class="form-control" aria-label="With textarea"></textarea>
 			</div>
 			<br></br>
-			<button type="submit" class="btn btn-primary">Subir archivo</button>
+			<button type="submit" class="btn btn-primary" id="Subir">Subir archivo</button>
 			
 		</form>
+	
 
 		
 	
 
-		<?php
 
-		?>
 
 	</body>
 	
