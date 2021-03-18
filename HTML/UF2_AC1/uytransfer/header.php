@@ -12,25 +12,7 @@
 
 	<body>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
-		  <a class="navbar-brand" id="titulo" href="#">Uy! Transfer</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarText">
-		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Features</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Pricing</a>
-		      </li>
-		    </ul>
-		  </div>
-		</nav>
+		
 		
 		
 		
@@ -39,8 +21,9 @@
 		<?php
 
 		$url1 = "https://www.marca.com/";
+		$url2 = "https://www.google.com/";
 
-		//echo "<div class=\"container mt-5 cabecera\" id=\"contenedor\"><div class=\"row\" id=\"row-titulo\"><div class=\"col-6 offset-3 p-3 bg-success d-flex-column rounded-top\" id=\"div-titulo\"><h1 class=\"text-white text-left\" id=\"titulo\">Uy!Transfer</h1><a href=\"$url1\">enviar archivo</a></div></div></div>";
+		echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark\"><a class=\"navbar-brand\" id=\"titulo\">Uy! Transfer</a><button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\"aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button><div class=\"collapse navbar-collapse\" id=\"navbarText\"><ul class=\"navbar-nav mr-auto\"><li class=\"nav-item active\"><a class=\"nav-link\" href=\"$url1\">Enviar archivo <span class=\"sr-only\">(current)</span></a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"$url2\">Mis últimos archivos</a></li></ul></div></nav>";
 
 		
 

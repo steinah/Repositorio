@@ -3,10 +3,15 @@
 
 
 #navbarText{
-	margin-left: 70%;
+	margin-left: 65%;
 }
 #titulo{
 	margin-left: 5%;
+}
+.forming{
+	margin:140px;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 

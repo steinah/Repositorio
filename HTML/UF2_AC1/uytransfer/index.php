@@ -3,42 +3,53 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Uy!Transfer</title>
-		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="icon" type="image/x-icon" href="images/favicon.png" />
+		<link rel="stylesheet" href="css/estilos.css" />
 	</head>
 
 	<body>
 
-		<div class="container mt-5" id="contenedor">
-			<div class="row" id="row-titulo">
-				
-				<div class="col-6 offset-3 p-3 bg-success d-flex-column rounded-top" id="div-titulo">
-					
-					
-					<h1 class="text-white text-left" id="titulo"></h1>
-
-				</div>
+		<form class="forming">
+			<div class="form-group">
 			
+			    <input type="text" class="form-control" id="exampleInputName" placeholder="Nombre">
+			    
 			</div>
-
-			<div class="row" id="row-formulario">
-
-			<div class="col-6 offset-3 p-3 bg-success rounded-bottom" id="div-formulario">
-				
-					<form id="formulario" name="formulario" action="login.php" method="post">
-						<div class="form-group" id="form-group-usuario">
-							<input type="text" class="form-control form-control-lg text-primary mx-auto my-3 w-75" id="nombre" name="nombre" placeholder="Tu nombre">
-						</div>
-					</form>
+			<div class="form-group">
+			    
+			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Selecciona un archivo">
+			</div>
+			 
+			
+			<br></br>
+			<div class="form-check">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label" for="exampleCheck1">Quiero enviar el link de descarga por email</label>
+			</div>
+			<br></br>
+			<div class="form-group">
+			    
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email del destinatario">
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+				    <span class="input-group-text">Mensaje</span>
 				</div>
+				<textarea class="form-control" aria-label="With textarea"></textarea>
 			</div>
-		</div>
+			<br></br>
+			<button type="submit" class="btn btn-primary">Subir archivo</button>
+			
+		</form>
 
 		
-		QUe paxa
+	
 
 		<?php
 
 		?>
+
 	</body>
+	
 </html>
