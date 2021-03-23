@@ -20,7 +20,7 @@
 
 		<?php
 
-		$url1 = "https://www.marca.com/";
+		$url1 = "upload.php";
 		$url2 = "https://www.google.com/";
 
 		echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark\"><a class=\"navbar-brand\" id=\"titulo\">Uy! Transfer</a><button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\"aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button><div class=\"collapse navbar-collapse\" id=\"navbarText\"><ul class=\"navbar-nav mr-auto\"><li class=\"nav-item active\"><a class=\"nav-link\" href=\"$url1\">Enviar archivo <span class=\"sr-only\">(current)</span></a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"$url2\">Mis últimos archivos</a></li></ul></div></nav>";

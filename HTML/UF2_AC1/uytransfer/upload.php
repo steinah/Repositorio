@@ -16,9 +16,9 @@
 			include "header.php";
 
 
+			
 
-			print_r($_POST);
-			print_r($_FILES);
+			
 
 			if (!empty($_POST["nombre"])) {
 				//Si es falso entra
@@ -32,44 +32,105 @@
 					echo "Se tiene que enviar un mail.";
 				}*/
 			}else {
-				header("Location: index.php");
+				$user = "Oye tu";
 			}
 
 
 
 			if (!empty($_FILES["archivo"])) {
 
+				
+    			$random = rand (10000, 99999);
+				
+				$hoy = getdate();
 				$nombreArchivo = $_FILES["archivo"]["name"];
 				$rutaTmp = $_FILES["archivo"]["tmp_name"];
+				$tamanyo = $_FILES["archivo"]["size"];
+				$tipo = $_FILES["archivo"]["type"];
 				$extension = substr($nombreArchivo, strpos($nombreArchivo, "."));
-				$rutaDestino = "files/".time().$extension;
+				$rutaDestino = "files/".$hoy["year"].$hoy["mon"].$hoy["mday"].$random.$extension;
 				$linkDescarga = $_SERVER["HTTP_ORIGIN"]."/$rutaDestino";
 
-				move_uploaded_file($rutaTmp, $rutaDestino);
+			
+
+				if($tamanyo < 10000000 && ($extension == ".pdf" || $extension == ".png" || $extension == ".jpg" || $extension == ".rar" || $extension == ".zip")){
+					$error = false;
+					move_uploaded_file($rutaTmp, $rutaDestino);
+				} else {
+					//header("Location: upload.php");
+					$error = true;
+				}
+				
 
 			}else {
 				header("Location: index.php");
 			}
 
-			if ($_POST['sendEmail'] == 'value1'){
-				mail("$mail", "Guapo", "$mensaje");
+			if (isset($_POST['check'])){
+
+				$checked = true;
+				
+			} else {
+				$checked = false;
 			}
+
+			if (!empty($_POST["mail"])) {
+				//Si es falso entra
+
+				//Se guarda en la variable con el metodo $_POST[]
+				$email = $_POST["mail"];
+				
+			}else {
+				header("Location: index.php");
+			}
+
+
+
+			if (!empty($_POST["textArea"])) {
+				//Si es falso entra
+
+				//Se guarda en la variable con el metodo $_POST[]
+				$mensaje = $_POST["textArea"];
+				
+			}else {
+				header("Location: index.php");
+			}
+
+
 			
-			
+			if ($checked == true) {
+				mail("$email", "Uy!Transfer", "$mensaje");
+			}
+
+			if ($error == true){
+				$img1 = "images/error.png";
+				$textoEnvio = "Archivo no Subido";
+				$linkDescarga = " ";
+				if($tamanyo < 10000000){
+					$subtexto = "$user, usa un tipo de formato adecuado para tu archivo";
+				}else if($extension == ".pdf" || $extension == ".png" || $extension == ".jpg" || $extension == ".rar" || $extension == ".zip"){
+					$subtexto = "$user, usa un tipo de tamaño adecuado para tu archivo";
+				}
+				
+			} else {
+				$img1 = "images/upload-cloud.png";
+				$textoEnvio = "Archivo enviado Correctamente";
+				$subtexto = "Hola $user, usa éste link para compartir tu archivo";
+			}
 
 
 
 			echo "<div class=\"forming\">
 			<div>
 				<div>
-					<img src=\"images/upload-cloud.png\" id=\"cloud\" class=\"rounded float-left\" alt=\"upload-cloud\"  >
+					<img src=\"$img1\" id=\"cloud\" class=\"rounded float-left\" alt=\"img1\"  >
 				</div>
 				<br></br>
 				<div class=\"text-center\">
-					<h1>Archivo enviado Correctamente</h1>
+					<h1>$textoEnvio</h1>
 				</div>
 				<div class=\"text-center\">
-					<p>Hola $user, usa éste link para compartir tu archivo</p>
+					<p>$subtexto</p>
 				</div>
 			</div>
 			<div>

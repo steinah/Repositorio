@@ -40,19 +40,19 @@
 			
 			<br></br>
 			<div class="form-check">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
 			    <label class="form-check-label" for="exampleCheck1">Quiero enviar el link de descarga por email</label>
 			</div>
 			<br></br>
 			<div class="form-group">
 			    
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email del destinatario">
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email del destinatario" name="mail">
 			</div>
 			<div class="input-group">
 				<div class="input-group-prepend">
 				    <span class="input-group-text">Mensaje</span>
 				</div>
-				<textarea class="form-control" aria-label="With textarea"></textarea>
+				<textarea class="form-control" aria-label="With textarea" name="textArea"></textarea>
 			</div>
 			<br></br>
 			<button type="submit" class="btn btn-primary" id="Subir">Subir archivo</button>
