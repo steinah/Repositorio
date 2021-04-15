@@ -1,5 +1,6 @@
 <?php
 	require "header.php";
+	require "config.php";
 ?>
 		<div class="container m-5 mx-auto text-white">
 			<form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
@@ -43,9 +44,42 @@
 							<label for="poblacion">Població (obligatori):</label>
 							<select class="form-control" name="poblacion" id="poblacion">
 								<option value="">Selecciona una opció</option>
-								<option value="1">Badalona</option>
-								<option value="2">Barcelona</option>
-								<option value="3">Castelldefels</option>
+
+								<?php
+									$sql = "SELECT id_poblacio, nom FROM poblacions ORDER BY nom";
+									//echo $sql;
+
+									$result = $conn->query($sql);
+
+									if ($result) {
+
+										if ($result->num_rows > 0) {
+											
+
+											$row = $result->fetch_assoc();
+											while($row) {
+
+												$id = $row["id_poblacio"];
+												$poblacio = $row["nom"];
+												
+
+												echo "<option value=\"$id\">$poblacio</option>";
+
+												$row = $result->fetch_assoc();
+											}
+
+											
+
+
+										} else {
+											echo "<p>No hay ningúna población</p>";
+										}
+									}
+
+									$conn->close();
+
+								?>
+								
 							</select>
 						</div>
 						<div class="form-group">
