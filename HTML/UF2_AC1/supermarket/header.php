@@ -1,3 +1,7 @@
+<?php
+ session_start ();
+ require "config.php";
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,7 +37,7 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item" href="form_client.php">Modificar les meves dades</a>
-							<a class="dropdown-item" href="tancar.php">Tarcar la sessió</a>
+							<a class="dropdown-item" href="tancar.php">Tancar la sessió</a>
 						</div>
 					</li>
 					<li class="nav-item dropdown">
@@ -55,7 +59,29 @@
 						</div>
 					</li>
 				</ul>
-				<a href="entrar.php" class="btn btn-primary my-0 mx-2">Entrar</a>
-				<a href="form_client.php" class="btn btn-outline-primary my-0">Nou client</a>
+				<?php
+
+
+					if(isset($_SESSION["user"])){
+
+						$sql = "SELECT nom, cognoms FROM clients WHERE id_client = $_SESSION[user]";
+						//echo "$sql";
+						$result = $conn->query($sql);
+						$row = $result->fetch_assoc();
+						if ($row) {	
+							$nombre = $row["nom"];
+							$apellidos = $row["cognoms"];
+						}
+
+						$nombreCompleto = "$nombre $apellidos";
+						echo "<ul class=\"navbar-nav mr-auto\">
+								<li class=\"text-white nav-item\">$nombreCompleto</li>
+								</ul>";
+					} else{
+						echo "<a href=\"entrar.php\" class=\"btn btn-primary my-0 mx-2\">Entrar</a>
+								<a href=\"form_client.php\" class=\"btn btn-outline-primary my-0\">Nou client</a>";
+					}
+				?>
+				
 			</div>
 		</nav>
