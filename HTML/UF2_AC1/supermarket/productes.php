@@ -1,5 +1,19 @@
 <?php
 	require "header.php";
+
+	if (isset($_POST["codi"])){
+
+		$codi = $_POST["codi"];
+		echo "$codi";
+
+		$sql = "DELETE FROM productes WHERE codi = '$codi'";
+	
+
+		$conn->query($sql);
+
+							
+	}
+
 ?>
 		<div class="container m-5 mx-auto">
 			<div class="col-8 offset-2">
@@ -103,7 +117,7 @@
 									$row = $result->fetch_assoc();
 								}
 
-								
+
 
 
 							} else {
@@ -111,7 +125,11 @@
 							}
 						}
 
-						echo "</table>";			
+
+						echo "</table>";	
+
+
+
 						$conn->close();
 					?>
 					
